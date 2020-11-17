@@ -67,6 +67,39 @@ TEST(PracticeTest, is_not_descending)
 		ASSERT_GT(second, third);
 }
 
+TEST(PracticeTest, negative_descending)
+{
+    Practice obj;
+		int first = -3;
+		int second = -2;
+		int third = -1;
+		obj.sortDescending(first, second, third);
+    ASSERT_GT(first, second);
+		ASSERT_GT(second, third);
+}
+
+TEST(PracticeTest, two_identical_descending)
+{
+    Practice obj;
+		int first = 1;
+		int second = 1;
+		int third = 2;
+		obj.sortDescending(first, second, third);
+    ASSERT_GT(first, second);
+		ASSERT_EQ(second, third);
+}
+
+TEST(PracticeTest, three_identical_descending)
+{
+    Practice obj;
+		int first = 1;
+		int second = 1;
+		int third = 1;
+		obj.sortDescending(first, second, third);
+    ASSERT_EQ(first, second);
+		ASSERT_EQ(second, third);
+}
+
 // Examples of a Sad Test Case for sortDescending
 TEST(PracticeTest, empty_descending)
 {
